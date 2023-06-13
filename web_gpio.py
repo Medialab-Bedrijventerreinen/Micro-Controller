@@ -62,6 +62,13 @@ class MyHandler(BaseHTTPRequestHandler):
             GPIO.output(18, GPIO.HIGH)
             time.sleep(2)
             GPIO.output(18, GPIO.LOW)
+	elif post_data == "blue":
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(17, GPIO.OUT)
+            GPIO.output(17, GPIO.HIGH)
+            time.sleep(2)
+            GPIO.output(17, GPIO.LOW)
         self._redirect('/')
 
 
